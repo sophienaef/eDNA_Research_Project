@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://www.marineregions.org/downloads.php?utm_source=chatgpt.com -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:foaf="http://xmlns.com/foaf/0.1/" data-theme="light" style="color-scheme: light;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Marine Regions</title>
+	
+	<link rel="stylesheet" href="./MEOW_files/styles.css" type="text/css">
+<meta name="foaf:seeAlso" content="/dcat">
+		<script type="text/javascript" async="" defer="" src="./MEOW_files/piwik.js.download"></script><script type="text/javascript" src="./MEOW_files/jquery.min.js.download"></script>
+		<script type="text/javascript" src="./MEOW_files/jquery-migrate.min.js.download"></script>
+		<script type="text/javascript">
+		<!--
+		function Start(URL){
+		 windowprops='directories=no,location=no,menubar=no,resizable=no,scrollbars=yes,status=no,toolbar=no,width=800,height=650,left=100,screenX=100,top=100,screenY=100';
+		 window.open(URL,'popWin',windowprops).focus();
+		}
+		//-->
+		var timeout         = 750;
+		var closetimer		= 0;
+		var ddmenuitem      = 0;
+
+		function jsddm_open()
+		{	jsddm_canceltimer();
+			jsddm_close();
+			ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+
+		function jsddm_close()
+		{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+		function jsddm_timer()
+		{	closetimer = window.setTimeout(jsddm_close, timeout);}
+
+		function jsddm_canceltimer()
+		{	if(closetimer)
+			{	window.clearTimeout(closetimer);
+				closetimer = null;}}
+
+		$(document).ready(function()
+		{	$('#menu > li').bind('mouseover', jsddm_open);
+			$('#menu > li').bind('mouseout',  jsddm_timer);});
+
+		document.onclick = jsddm_close;
+		</script>
+
+<!-- Piwik start -->
+	<script type="text/javascript">
+	var _paq = _paq || [];
+	_paq.push(['disableCookies']);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+	var u="//piwik.vliz.be/";
+	_paq.push(['setTrackerUrl', u+'piwik.php']);
+	_paq.push(['setSiteId', 35]);
+	var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<noscript><p><img src="//piwik.vliz.be/piwik.php?idsite=35" style="border:0;" alt="" /></p></noscript>
+<!-- Piwik end --><style>@import url(https://fonts.googleapis.com/css?family=Outfit);</style><style>/* FONT FAMILYS */
+@font-face {
+  font-family: "Trump Mediaeval Bold";
+  font-weight: 900;
+  src: local("Trump Mediaeval"), url(https://www.marineregions.org/74413b127a87627a8fce.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Trump Mediaeval Roman";
+  src: local("Trump Mediaeval"), url(https://www.marineregions.org/223f2af263aa0473b893.otf) format("opentype");
+}
+/* FONT FAMILIES END */
+
+/* Hover state styling for buttons with a white svg icon  */
+.wisdolia-white-icon-button:hover svg path {
+  fill: #f7e1c6;
+}
+
+.wisdolia-white-icon-button:hover p {
+  color: #f7e1c6;
+}
+
+/* Hover state styling for buttons with a white svg icon  */
+.wisdolia-icon-button-hover-styling:hover svg path {
+  fill: #434744;
+}
+
+.wisdolia-icon-button-hover-styling:hover p {
+  color: #434744;
+}
+
+.wisdolia-secondary-action-button-hover-styling svg path {
+  fill: rgba(106, 107, 106, 1);
+}
+/* Hover state styling for buttons with a white svg icon  */
+.wisdolia-secondary-action-button-hover-styling:hover:enabled svg path {
+  fill: #515251;
+}
+.wisdolia-secondary-action-button-hover-styling:hover:enabled svg g path {
+  fill: black;
+}
+
+.wisdolia-secondary-action-button-hover-styling:hover:enabled p {
+  color: #515251;
+}
+</style><style type="text/css">@keyframes spinners-react-infinity{0%{stroke-dasharray:1,347;stroke-dashoffset:75}25%,75%{stroke-dasharray:17,330}50%{stroke-dasharray:1,347}to{stroke-dasharray:1,347;stroke-dashoffset:423}}</style></head>
+		<body class="chakra-ui-light" data-new-gr-c-s-check-loaded="14.1304.0" data-gr-ext-installed="">
+
+		<div id="wrapper">
+		<div id="mr_header">
+		<a href="https://www.marineregions.org/"><div id="icon"></div></a>
+		<a href="https://www.marineregions.org/"><div id="sitename"></div></a><ul id="menu"><li><a href="https://www.marineregions.org/about.php">About</a></li><li><a href="https://www.marineregions.org/gazetteer.php?p=search">Gazetteer</a></li><li><a href="https://www.marineregions.org/eezsearch.php">Maritime Boundaries</a></li><li><a href="https://www.marineregions.org/sources.php">Sources</a></li><li><a href="https://www.marineregions.org/content.php">Statistics</a></li><li class="selected"><a href="https://www.marineregions.org/downloads.php">Downloads</a></li></ul>
+		</div><!-- close header -->
+		<div id="headerleft"><ul id="leftmenu"><li><a href="https://www.marineregions.org/downloads.php" class="selected">Download</a></li><li><a href="https://www.marineregions.org/sources.php">More info</a></li><li><a href="https://www.marineregions.org/maps.php">Static Maps</a></li><li><a href="https://www.marineregions.org/webservices.php">OGC services</a></li><li><a href="https://www.marineregions.org/gazetteer.php?p=webservices">SOAP/REST</a></li></ul></div><!-- close headerleft --><div id="content"><h2>Shapefiles</h2>
+
+<a id="0" name="marbound12" class="toggle"><h4 id="0_title">
+				<img id="0_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="0_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Maritime Boundaries (latest version)</h4></a>
+				<div id="0_div" class="closed" style="margin-left:20px;"><ul><li>World EEZ v12 (2023-10-25, 122 MB) - <small>downloads: 37656</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v12_20231025_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v12_20231025.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v12_20231025_HR_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v12_20231025_LR.zip&#39;);">Low res</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v12_20231025_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/eez_v12_changes.php" target="_blank">Change history</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World 24 Nautical Miles Zone (Contiguous Zone) v4 (2023-10-25, 46 MB) - <small>downloads: 5285</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v4_20231025_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v4_20231025.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v4_20231025_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v4_20231025_kml.zip&#39;);">KML</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World 12 Nautical Miles Zone (Territorial Seas) v4 (2023-10-25, 50 MB) - <small>downloads: 10328</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v4_20231025_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v4_20231025.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v4_20231025_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v4_20231025_kml.zip&#39;);">KML</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World Internal Waters v4 (2023-10-25, 54 MB) - <small>downloads: 3617</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v4_20231025_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v4_20231025.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v4_20231025_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v4_20231025_kml.zip&#39;);">KML</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World Archipelagic Waters v4 (2023-10-25, 28 MB) - <small>downloads: 2134</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v4_20231025_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v4_20231025.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v4_20231025_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v4_20231025_kml.zip&#39;);">KML</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World High Seas v2 (2024-10-10, 6.85 MB) - <small>downloads: 2083</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v2_20241010_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v2_20241010.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v2_20241010_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v2_20241010_kml.zip&#39;);">KML</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/1" target="_blank">Known issues</a>]</li>
+<li>World Extended Continental Shelves v2 (2024-10-10, 6 MB) - <small>downloads: 2489</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v2_20241010_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v2_20241010.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v2_20241010_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v2_20241010_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/ecs_v2_changes.php" target="_blank">Change history</a>] [<a href="https://github.com/lifewatch/marineregions-issues/milestone/4" target="_blank">Known issues</a>]</li>
+</ul><a href="https://www.marineregions.org/sources.php#marbound">more info</a></div><a id="1" name="marboundOld" class="toggle"><h4 id="1_title">
+				<img id="1_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="1_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Maritime Boundaries (older versions)</h4></a>
+				<div id="1_div" class="closed" style="margin-left:20px;"><a id="1_0" name="marbound11" class="toggle"><h4 id="1_title">
+				<img id="1_0_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="1_0_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Maritime Boundaries v11</h4></a>
+				<div id="1_0_div" class="closed" style="margin-left:20px;"><ul><li>World EEZ v11 (2019-11-18, 127 MB) - <small>downloads: 36280</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v11_20191118_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v11_20191118.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v11_20191118_HR_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v11_20191118_LR.zip&#39;);">Low res</a>] [<a href="https://www.marineregions.org/files/eez_v11_changes.php" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v11_20191118_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 24 Nautical Miles Zone (Contiguous Zone) v3 (2019-11-18, 47 MB) - <small>downloads: 5560</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v3_20191118_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v3_20191118.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v3_20191118_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_24NM_v3_20191118_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 12 Nautical Miles Zone (Territorial Seas) v3 (2019-11-18, 53 MB) - <small>downloads: 10386</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v3_20191118_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v3_20191118.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v3_20191118_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_12NM_v3_20191118_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Internal Waters v3 (2019-11-18, 55 MB) - <small>downloads: 4125</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v3_20191118_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v3_20191118.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v3_20191118_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_Internal_Waters_v3_20191118_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Archipelagic Waters v3 (2019-11-18, 28 MB) - <small>downloads: 2731</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v3_20191118_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v3_20191118.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v3_20191118_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_Archipelagic_Waters_v3_20191118_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World High Seas v1 (2020-08-26, 6 MB) - <small>downloads: 3986</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v1_20200826_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v1_20200826.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v1_20200826_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_High_Seas_v2_20241010_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_High_Seas_v2_20241010_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Extended Continental Shelves v1 (2022-10-13, 7 MB) - <small>downloads: 3265</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v1_20221013_gpkg.zip&#39;);">GeoPackage</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v1_20221013.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_ECS_v1_20221013_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_ECS_v1_20221013_known_issues.txt" target="_blank">Known issues</a>]</li>
+</ul></div><a id="1_1" name="marbound10" class="toggle"><h4 id="1_title">
+				<img id="1_1_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="1_1_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Maritime Boundaries v10</h4></a>
+				<div id="1_1_div" class="closed" style="margin-left:20px;"><ul><li>World EEZ v10 (2018-02-21, 119 MB) - <small>downloads: 14027</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v10_20180221.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v10_20180221_HR_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/eez_v10_changes.php" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v10_20180221_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 24 Nautical Miles Zone (Contiguous Zone) v2 (2018-02-21, 44 MB) - <small>downloads: 3154</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v2_20180221.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_24NM_v2_20180221_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 12 Nautical Miles Zone (Territorial Seas) v2 (2018-02-21, 50 MB) - <small>downloads: 4373</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v2_20180221.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v2_20180221_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_12NM_v2_20180221_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Internal Waters v2 (2018-02-21, 52 MB) - <small>downloads: 1713</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v2_20180221.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_Internal_Waters_v2_20180221_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Archipelagic Waters v2 (2018-02-21, 27 MB) - <small>downloads: 1296</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v2_20180221.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v2_20180221_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="https://www.marineregions.org/files/World_Archipelagic_Waters_v2_20180221_known_issues.txt" target="_blank">Known issues</a>]</li>
+</ul></div><a id="1_2" name="marbound9" class="toggle"><h4 id="1_title">
+				<img id="1_2_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="1_2_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Maritime Boundaries v9</h4></a>
+				<div id="1_2_div" class="closed" style="margin-left:20px;"><ul><li>World EEZ v9 (2016-10-21, 123 MB) - <small>downloads: 11135</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v9_20161021.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v9_20161021_HR_0_360.zip&#39;);">0 to 360 Degrees</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v9_20161021_LR.zip&#39;);">Low res</a>] [<a href="https://www.marineregions.org/files/eez_v9_changes.php" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v9_20161021_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 24 Nautical Miles Zone (Contiguous Zone) v1 (2016-10-21, 44 MB) - <small>downloads: 1459</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_24NM_v1_20161021.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_24NM_v1_20161021_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World 12 Nautical Miles Zone (Territorial Seas) v1 (2016-10-21, 44 MB) - <small>downloads: 3074</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_12NM_v1_20161021.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_12NM_v1_20161021_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Internal Waters v1 (2016-10-21, 52 MB) - <small>downloads: 1284</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Internal_Waters_v1_20161021.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_Internal_Waters_v1_20161021_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World Archipelagic Waters v1 (2016-10-21, 27 MB) - <small>downloads: 886</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Archipelagic_Waters_v1_20161021.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_Archipelagic_Waters_v1_20161021_known_issues.txt" target="_blank">Known issues</a>]</li>
+</ul></div><a id="1_3" name="marbound0" class="toggle"><h4 id="1_title">
+				<img id="1_3_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="1_3_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				World EEZ older versions</h4></a>
+				<div id="1_3_div" class="closed" style="margin-left:20px;"><ul><li>World EEZ v8 (2014-02-28, 65 MB) - <small>downloads: 13989</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v8_20140228.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v8_20140228_LR.zip&#39;);">Low res</a>] [<a href="https://www.marineregions.org/files/eez_v8_changes.php" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v8_20140228_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World EEZ v7 (2012-11-20, 67 MB) - <small>downloads: 5561</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v7_20121120.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v7_20121120_LR.zip&#39;);">Low res</a>] [<a href="https://www.marineregions.org/files/eez_v7_changes.php" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v7_20121120_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World EEZ v6.1 (2011-05-12, 84 MB) - <small>downloads: 5934</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6.1_20110512.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6.1_20110512_LR.zip&#39;);">Low res</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6.1_20110512_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v6.1_20110512_changes.txt" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v6.1_20110512_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World EEZ v6 (2011-03-30, 84 MB) - <small>downloads: 6880</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6_20110330.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6_20110330_LR.zip&#39;);">Low res</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v6_20110330_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v6_20110330_changes.txt" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v6_20110330_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World EEZ v5 (2009-10-01, 86 MB) - <small>downloads: 3996</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v5_20091001.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v5_20091001_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v5_20091001_changes.txt" target="_blank">Change history</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v5_20091001_known_issues.txt" target="_blank">Known issues</a>]</li>
+<li>World EEZ v4 (2009-08-11, 86 MB) - <small>downloads: 887</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v4_20090811.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v4_20090811_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v4_20090811_changes.txt" target="_blank">Change history</a>]</li>
+<li>World EEZ v3 (2009-04-30, 85 MB) - <small>downloads: 724</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v3_20090430.zip&#39;);">Shapefile</a>] [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v3_20090430_kml.zip&#39;);">KML</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v3_20090430_changes.txt" target="_blank">Change history</a>]</li>
+<li>World EEZ v2 (2008-10-31, 4 MB) - <small>downloads: 1343</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v2_20081031.zip&#39;);">Shapefile</a>] [<a href="https://www.marineregions.org/files/World_EEZ_v2_20081031_changes.txt" target="_blank">Change history</a>]</li>
+<li>World EEZ v1 (2006-01-26, 4 MB) - <small>downloads: 90177</small><br> [<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_EEZ_v1_20060126.zip&#39;);">Shapefile</a>]</li>
+</ul></div><a href="https://www.marineregions.org/sources.php#marbound">more info</a></div><a id="2" name="iho" class="toggle"><h4 id="2_title">
+				<img id="2_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="2_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				IHO Sea Areas</h4></a>
+				<div id="2_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li>Version 3 (2018)</li>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Seas_IHO_v3.zip&#39;);">Sea Areas Shapefile (102 MB)</a> [<a href="https://www.marineregions.org/files/IHO_v3_known_issues.txt" target="_blank">Known issues</a>]</li>
+					</ul>
+				<li>Version 2 (2017)</li>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Seas_IHO_v2.zip&#39;);">Sea Areas Shapefile (101 MB)</a>  [<a href="https://www.marineregions.org/files/IHO_v2_known_issues.txt" target="_blank">Known issues</a>]</li>
+					</ul>
+				<li>Version 1 (2005)</li>		
+					<ul>
+						<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Seas_IHO_v1.zip&#39;);">Sea Areas Shapefile (1,733 kb)</a></li>
+						<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=World_Seas_IHO_v1_kmz.zip&#39;);">Sea Areas KML file (631 kb)</a></li>
+					</ul>
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#iho">more info</a></div><a id="3" name="goas" class="toggle"><h4 id="3_title">
+				<img id="3_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="3_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Global Oceans and Seas</h4></a>
+				<div id="3_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li>Global Oceans and Seas v01 (2021-12-14, 88 MB)<br>
+				[<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=GOaS_v1_20211214_gpkg.zip&#39;);">GeoPackage</a>]
+				[<a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=GOaS_v1_20211214.zip&#39;);">Shapefile</a>]
+				[<a href="https://www.marineregions.org/files/GOAS_v1_20211214_known_issues.txt" target="_blank">Known issues</a>]
+			</li></ul>
+		<a href="https://www.marineregions.org/sources.php#goas">more info</a></div><a id="4" name="ihoeez" class="toggle"><h4 id="4_title">
+				<img id="4_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="4_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Marineregions: intersect of EEZs and IHO areas</h4></a>
+				<div id="4_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Intersect_EEZ_IHO_v5_20241010.zip&#39;);">Version 5 - 2024 (125 MB)</a> (created from EEZ version 12)</li>[<a href="https://www.marineregions.org/files/EEZ_IHO_marineregions_v5_known_issues.txt" target="_blank">Known issues</a>]
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Intersect_EEZ_IHO_v4_2020.zip&#39;);">Version 4 - 2020 (119 MB)</a> (created from EEZ version 11)</li>[<a href="https://www.marineregions.org/files/EEZ_IHO_marineregions_v4_known_issues.txt" target="_blank">Known issues</a>]
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Intersect_EEZ_IHO_v3_2018.zip&#39;);">Version 3 - 2018 (121 MB)</a> (created from EEZ version 10)</li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Intersect_IHO_EEZ_v2_2012.zip&#39;);">Version 2 - 2012 (4.96 MB)</a> (created from EEZ version 7)</li>[<a href="https://www.marineregions.org/files/EEZ_IHO_marineregions_v2_known_issues.txt" target="_blank">Known issues</a>] 
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Intersect_IHO_EEZ_v1_2010.zip&#39;);">Version 1 - 2010 (5.55 MB)</a></li>
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#ihoeez">more info</a></div><a id="5" name="unioneezcountry" class="toggle"><h4 id="5_title">
+				<img id="5_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="5_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Marine and land zones: the union of world country boundaries and EEZ's</h4></a>
+				<div id="5_div" class="closed" style="margin-left:20px;">
+			<ul>
+				
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=EEZ_land_union_v4_202410.zip&#39;);">Version 4 - 2024-10-10 (18.3 MB)</a> [<a href="https://www.marineregions.org/files/EEZ_land_union_v4_known_issues.txt" target="_blank">Known issues</a>] (created from EEZ version 12)</li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=EEZ_land_union_v3_202003.zip&#39;);">Version 3 - 2020-03-17 (19 MB)</a> [<a href="https://www.marineregions.org/files/EEZ_land_union_v3_known_issues.txt" target="_blank">Known issues</a>] (created from EEZ version 11)</li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=EEZ_land_union_v2_201410.zip&#39;);">Version 2 - 2014-10-15 (2 MB)</a> (created from EEZ version 8)</li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=EEZ_land_union_v1.zip&#39;);">Version 1 - 2012-11-16 (2 MB)</a> [<a href="https://www.marineregions.org/files/EEZ_land_union_v1_known_issues.txt" target="_blank">Known issues</a>] (created from EEZ version 7)</li>
+			</ul><a href="https://www.marineregions.org/sources.php#unioneezcountry">more info</a></div><a id="6" name="heritage" class="toggle"><h4 id="6_title">
+				<img id="6_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="6_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				UNESCO World Heritage Marine Sites</h4></a>
+				<div id="6_div" class="closed" style="margin-left:20px;">
+			<ul>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=WorldMarineHeritageSites_v2.zip&#39;);">v2 2023 (2.88 MB)</a></li>
+<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=WorldMarineHeritageSites_v1.zip&#39;);">v1 2013 (3.53 MB)</a></li>
+
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#heritage">more info</a></div><a id="7" name="fao" class="toggle"><h4 id="7_title">
+				<img id="7_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="7_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				FAO Fishing Areas</h4></a>
+				<div id="7_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li><a href="http://www.fao.org/fishery/geonetwork?uuid=ac02a460-da52-11dc-9d70-0017f293bd28" target="_blank">Download the shapefiles from FAO</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=fao.zip&#39;);">Version 1 - 2005 (2,213 kb)</a></li>
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#fao">more info</a></div><a id="8" name="ecosystems" class="toggle"><h4 id="8_title">
+				<img id="8_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="8_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Large Marine Ecosystems of the World</h4></a>
+				<div id="8_div" class="closed" style="margin-left:20px;"><ul><li>Go to <a href="http://geonode.iwlearn.org/" target="_blank">LME-website</a></li></ul><a href="https://www.marineregions.org/sources.php#ecosystems">more info</a></div><a id="9" name="longhurst" class="toggle"><h4 id="9_title">
+				<img id="9_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="9_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Longhurst Provinces</h4></a>
+				<div id="9_div" class="closed" style="margin-left:20px;"><ul><li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=longhurst_v4_2010.zip&#39;);">Version 4 - March 2010 (2,34 MB)</a></li></ul><a href="https://www.marineregions.org/sources.php#longhurst">more info</a></div><a id="10" name="iceser" class="toggle"><h4 id="10_title" class="open">
+				<img id="10_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align: bottom; display: none;">
+				<img id="10_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align: bottom; display: inline;">
+				ICES Ecoregions</h4></a>
+				<div id="10_div" class="closed" style="margin-left: 20px; display: block;"><ul><li><a href="http://gis.ices.dk/shapefiles/ICES_ecoregions.zip" target="_blank">Download shapefiles directly from ICES website</a></li></ul><a href="https://www.marineregions.org/sources.php#iceser">more info</a></div><a id="11" name="icessa" class="toggle"><h4 id="11_title">
+				<img id="11_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="11_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				ICES Statistical areas</h4></a>
+				<div id="11_div" class="closed" style="margin-left:20px;"><ul><li><a href="http://gis.ices.dk/shapefiles/ICES_areas.zip" target="_blank">Download shapefiles directly from ICES website</a></li></ul><a href="https://www.marineregions.org/sources.php#icessa">more info</a></div><a id="12" name="icessr" class="toggle"><h4 id="12_title">
+				<img id="12_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="12_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				ICES Statistical rectangles</h4></a>
+				<div id="12_div" class="closed" style="margin-left:20px;"><ul><li><a href="http://gis.ices.dk/shapefiles/ICES_rectangles.zip" target="_blank">Download shapefiles directly from ICES website</a></li></ul><a href="https://www.marineregions.org/sources.php#icessr">more info</a></div><a id="13" name="icesssr" class="toggle"><h4 id="13_title">
+				<img id="13_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="13_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				ICES Statistical subrectangles</h4></a>
+				<div id="13_div" class="closed" style="margin-left:20px;"><ul><li><a href="http://gis.ices.dk/shapefiles/ICES_SubStatrec.zip" target="_blank">Download shapefiles directly from ICES website</a></li></ul><a href="https://www.marineregions.org/sources.php#icesssr">more info</a></div><a id="14" name="ios" class="toggle"><h4 id="14_title">
+				<img id="14_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="14_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				IOS Zooplankton Regions</h4></a>
+				<div id="14_div" class="closed" style="margin-left:20px;"><ul><li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=IOS_kml.zip&#39;);">IOS Zooplankton Regions (KML/Google Earth) (22 kb)</a></li></ul><a href="https://www.marineregions.org/sources.php#ios">more info</a></div><a id="15" name="ospar" class="toggle"><h4 id="15_title">
+				<img id="15_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="15_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				OSPAR Boundaries and Regions</h4></a>
+				<div id="15_div" class="closed" style="margin-left:20px;"><ul><li><a href="http://odims.ospar.org/odims_data_files" target="_blank">Download shapefiles directly from OSPAR website</a></li></ul><a href="https://www.marineregions.org/sources.php#ospar">more info</a></div><a id="16" name="meow" class="toggle"><h4 id="16_title">
+				<img id="16_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="16_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Marine Ecoregions of the World, MEOW (Spalding et al., 2007)</h4></a>
+				<div id="16_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li>Go to the <a href="http://www.worldwildlife.org/publications/marine-ecoregions-of-the-world-a-bioregionalization-of-coastal-and-shelf-areas" target="_blank">website</a></li>
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#meow">more info</a></div><a id="17" name="feow" class="toggle"><h4 id="17_title">
+				<img id="17_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="17_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Freshwater Ecoregions of the World, FEOW (The Nature Conservancy and World Wildlife Fund, Inc., 2008)</h4></a>
+				<div id="17_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li>Go to the <a href="https://www.feow.org/download" target="_blank">website</a></li>
+			</ul>
+		<a href="https://www.marineregions.org/sources.php#feow">more info</a></div><a id="18" name="comarge" class="toggle"><h4 id="18_title">
+				<img id="18_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="18_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Continental margins between 140m and 3500m depth (IFREMER - COMARGE, 2009)</h4></a>
+				<div id="18_div" class="closed" style="margin-left:20px;"><ul><li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Comarge.zip&#39;);">2009 (10.6 MB)</a></li></ul><a href="https://www.marineregions.org/sources.php#comarge">more info</a></div><a id="19" name="seavox" class="toggle"><h4 id="19_title">
+				<img id="19_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="19_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				The SeaVoX Salt and Fresh Water Body Gazetteer</h4></a>
+				<div id="19_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=SeaVoX_sea_areas_polygons_v19.zip&#39;);">v19 2023 (68 MB)</a></li>
+<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=SeaVoX_sea_areas_polygons_v18.zip&#39;);">v18 2021 (68.9 MB)</a></li>
+<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=SeaVoX_sea_areas_polygons_v17.zip&#39;);">v17 2019 (67.5 MB)</a></li>
+<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=SeaVoX_sea_areas_polygons_v16.zip&#39;);">v16 2015 (67.3 MB)</a></li>
+<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=SeaVoX_sea_areas_polygons_v14.zip&#39;);">v14 2013 (63.7 MB)</a></li>
+
+				<!-- TODO: put all in version array -->
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=sea_vox_sea_areas_v13.zip&#39;);">v13 2012 (59.6 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=sea_vox_sea_areas_shapefile_v12.zip&#39;);">v12 2012 (59.4 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=sea_vox_sea_areas_shapefile_v11.zip&#39;);">v11 2012 (59.5 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=sea_vox_sea_areas_shapefile_v9.zip&#39;);">v9 2011 (51.5 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=sea_vox_sea_areas_shapefile_v8.zip&#39;);">v8 2011 (51.5 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=seavox_gazetteer02062010.zip&#39;);">2010 (48.4 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Seavox.zip&#39;);">2009 (48.4 MB)</a></li>
+			</ul><a href="https://www.marineregions.org/sources.php#seavox">more info</a></div><a id="20" name="statistics" class="toggle"><h4 id="20_title">
+				<img id="20_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="20_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Statistics on Marbound and IHO (Costello et al., 2011)</h4></a>
+				<div id="20_div" class="closed" style="margin-left:20px;">
+			<ul>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=EEZ_results.zip&#39;);">EEZ results - 2010 (76.9 MB)</a></li>
+				<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=IHO_results.zip&#39;);">IHO results - 2010 (1.65 MB)</a></li>
+			</ul><a href="https://www.marineregions.org/sources.php#statistics">more info</a></div><a id="21" name="tdwg" class="toggle"><h4 id="21_title">
+				<img id="21_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="21_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				TDWG Geography shapefiles</h4></a>
+				<div id="21_div" class="closed" style="margin-left:20px;"><ul><li>More information and the shapefiles can be found on <a href="https://www.kew.org/gis/tdwg/" target="_blank">Kew GIS Unit</a></li></ul><a href="https://www.marineregions.org/sources.php#tdwg">more info</a></div><a id="22" name="gebco_undersea" class="toggle"><h4 id="22_title">
+				<img id="22_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="22_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				GEBCO Gazetteer of undersea feature names</h4></a>
+				<div id="22_div" class="closed" style="margin-left:20px;">
+		<ul><li>More information and the files can be found on <a href="http://www.gebco.net/data_and_products/undersea_feature_names/" target="_blank">http://www.gebco.net/data_and_products/undersea_feature_names</a>.</li></ul>
+		<a href="https://www.marineregions.org/sources.php#gebco_undersea">more info</a></div><a id="23" name="gebco" class="toggle"><h4 id="23_title">
+				<img id="23_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="23_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				General Bathymetric Chart of the Oceans (GEBCO)</h4></a>
+				<div id="23_div" class="closed" style="margin-left:20px;"><ul><li>More information and the grid files can be found on <a href="http://www.gebco.net/data_and_products/gridded_bathymetry_data/" target="_blank">www.gebco.net</a></li></ul><a href="https://www.marineregions.org/sources.php#gebco">more info</a></div><a id="24" name="etopo1" class="toggle"><h4 id="24_title">
+				<img id="24_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="24_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				ETOPO1 Global Relief Model</h4></a>
+				<div id="24_div" class="closed" style="margin-left:20px;">
+		<ul>
+			<li>More information and the grid files can be found on <a href="https://www.ngdc.noaa.gov/mgg/global/global.html" target="_blank">www.ngdc.noaa.gov</a></li>
+		</ul>
+		<a href="https://www.marineregions.org/sources.php#etopo1">more info</a></div><a id="25" name="nafo" class="toggle"><h4 id="25_title">
+				<img id="25_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="25_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				The NAFO Convention Area</h4></a>
+				<div id="25_div" class="closed" style="margin-left:20px;">
+		<ul>
+			<li>More information and the files can be found on <a href="https://www.nafo.int/Data/GIS" target="_blank">https://www.nafo.int/Data/GIS</a> </li>
+		</ul>
+		<a href="https://www.marineregions.org/sources.php#nafo">more info</a></div><a id="26" name="tnc" class="toggle"><h4 id="26_title">
+				<img id="26_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="26_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Terrestrial Ecoregional Boundaries Shapefile (TNC)</h4></a>
+				<div id="26_div" class="closed" style="margin-left:20px;">
+		<ul>
+			<li>More information and the files can be found in the <a href="https://geospatial.tnc.org/datasets/0316dce180e14f339181ac8d4986b4d5_1/explore" target="_blank">TNC Geospatial Conservation Atlas</a> </li>
+		</ul>
+		<a href="https://www.marineregions.org/sources.php#tnc">more info</a></div><a id="27" name="contourite" class="toggle"><h4 id="27_title">
+				<img id="27_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="27_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Global contourite distribution Shapefile</h4></a>
+				<div id="27_div" class="closed" style="margin-left:20px;">
+		<ul>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Global-contourite-distribution-database_v3_2019.zip&#39;);">Global contourite distribution database version 3 (2019) (362 kb)</a></li>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Global-contourite-distribution-database_v2_2014.zip&#39;);">Global contourite distribution database version 2 (2014) (234 kb)</a></li>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=Global-contourite-distribution-database_v1_2013.zip&#39;);">Global contourite distribution database version 1 (2013) (157 kb)</a></li><br>
+		</ul>
+		<a href="https://www.marineregions.org/sources.php#contourite">more info</a></div><a id="28" name="eca" class="toggle"><h4 id="28_title">
+				<img id="28_img_closed" src="./MEOW_files/arrow_closed.png" style="vertical-align:bottom;">
+				<img id="28_img_open" src="./MEOW_files/arrow_open.png" class="closed" style="vertical-align:bottom;">
+				Emission Control Areas (ECAs)</h4></a>
+				<div id="28_div" class="closed" style="margin-left:20px;">
+		<ul>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=eca_reg13_nox.zip&#39;);">Emission Control Areas (ECAs) designated under regulation 13 of MARPOL Annex VI (NOx emission control) (5.63 MB)</a></li>
+			<li><a href="javascript:void(0);" onclick="Start(&#39;download_file.php?name=eca_reg14_sox_pm.zip&#39;);">Emission Control Areas (ECAs) designated under regulation 14 of MARPOL Annex VI (SOx and particulate matter emission control) (11.6 MB)</a></li>
+		</ul>
+		<a href="https://www.marineregions.org/sources.php#eca">more info</a></div>
+<script type="text/javascript" language="javascript">$("#0").click(function () {
+				$("#0_div").toggle();
+				$("#0_img_closed").toggle();
+				$("#0_img_open").toggle();
+				$("#0_title").toggleClass("open");
+			});$("#1_0").click(function () {
+				$("#1_0_div").toggle();
+				$("#1_0_img_closed").toggle();
+				$("#1_0_img_open").toggle();
+				$("#1_0_title").toggleClass("open");
+			});$("#1_1").click(function () {
+				$("#1_1_div").toggle();
+				$("#1_1_img_closed").toggle();
+				$("#1_1_img_open").toggle();
+				$("#1_1_title").toggleClass("open");
+			});$("#1_2").click(function () {
+				$("#1_2_div").toggle();
+				$("#1_2_img_closed").toggle();
+				$("#1_2_img_open").toggle();
+				$("#1_2_title").toggleClass("open");
+			});$("#1_3").click(function () {
+				$("#1_3_div").toggle();
+				$("#1_3_img_closed").toggle();
+				$("#1_3_img_open").toggle();
+				$("#1_3_title").toggleClass("open");
+			});$("#1").click(function () {
+				$("#1_div").toggle();
+				$("#1_img_closed").toggle();
+				$("#1_img_open").toggle();
+				$("#1_title").toggleClass("open");
+			});$("#2").click(function () {
+				$("#2_div").toggle();
+				$("#2_img_closed").toggle();
+				$("#2_img_open").toggle();
+				$("#2_title").toggleClass("open");
+			});$("#3").click(function () {
+				$("#3_div").toggle();
+				$("#3_img_closed").toggle();
+				$("#3_img_open").toggle();
+				$("#3_title").toggleClass("open");
+			});$("#4").click(function () {
+				$("#4_div").toggle();
+				$("#4_img_closed").toggle();
+				$("#4_img_open").toggle();
+				$("#4_title").toggleClass("open");
+			});$("#5").click(function () {
+				$("#5_div").toggle();
+				$("#5_img_closed").toggle();
+				$("#5_img_open").toggle();
+				$("#5_title").toggleClass("open");
+			});$("#6").click(function () {
+				$("#6_div").toggle();
+				$("#6_img_closed").toggle();
+				$("#6_img_open").toggle();
+				$("#6_title").toggleClass("open");
+			});$("#7").click(function () {
+				$("#7_div").toggle();
+				$("#7_img_closed").toggle();
+				$("#7_img_open").toggle();
+				$("#7_title").toggleClass("open");
+			});$("#8").click(function () {
+				$("#8_div").toggle();
+				$("#8_img_closed").toggle();
+				$("#8_img_open").toggle();
+				$("#8_title").toggleClass("open");
+			});$("#9").click(function () {
+				$("#9_div").toggle();
+				$("#9_img_closed").toggle();
+				$("#9_img_open").toggle();
+				$("#9_title").toggleClass("open");
+			});$("#10").click(function () {
+				$("#10_div").toggle();
+				$("#10_img_closed").toggle();
+				$("#10_img_open").toggle();
+				$("#10_title").toggleClass("open");
+			});$("#11").click(function () {
+				$("#11_div").toggle();
+				$("#11_img_closed").toggle();
+				$("#11_img_open").toggle();
+				$("#11_title").toggleClass("open");
+			});$("#12").click(function () {
+				$("#12_div").toggle();
+				$("#12_img_closed").toggle();
+				$("#12_img_open").toggle();
+				$("#12_title").toggleClass("open");
+			});$("#13").click(function () {
+				$("#13_div").toggle();
+				$("#13_img_closed").toggle();
+				$("#13_img_open").toggle();
+				$("#13_title").toggleClass("open");
+			});$("#14").click(function () {
+				$("#14_div").toggle();
+				$("#14_img_closed").toggle();
+				$("#14_img_open").toggle();
+				$("#14_title").toggleClass("open");
+			});$("#15").click(function () {
+				$("#15_div").toggle();
+				$("#15_img_closed").toggle();
+				$("#15_img_open").toggle();
+				$("#15_title").toggleClass("open");
+			});$("#16").click(function () {
+				$("#16_div").toggle();
+				$("#16_img_closed").toggle();
+				$("#16_img_open").toggle();
+				$("#16_title").toggleClass("open");
+			});$("#17").click(function () {
+				$("#17_div").toggle();
+				$("#17_img_closed").toggle();
+				$("#17_img_open").toggle();
+				$("#17_title").toggleClass("open");
+			});$("#18").click(function () {
+				$("#18_div").toggle();
+				$("#18_img_closed").toggle();
+				$("#18_img_open").toggle();
+				$("#18_title").toggleClass("open");
+			});$("#19").click(function () {
+				$("#19_div").toggle();
+				$("#19_img_closed").toggle();
+				$("#19_img_open").toggle();
+				$("#19_title").toggleClass("open");
+			});$("#20").click(function () {
+				$("#20_div").toggle();
+				$("#20_img_closed").toggle();
+				$("#20_img_open").toggle();
+				$("#20_title").toggleClass("open");
+			});$("#21").click(function () {
+				$("#21_div").toggle();
+				$("#21_img_closed").toggle();
+				$("#21_img_open").toggle();
+				$("#21_title").toggleClass("open");
+			});$("#22").click(function () {
+				$("#22_div").toggle();
+				$("#22_img_closed").toggle();
+				$("#22_img_open").toggle();
+				$("#22_title").toggleClass("open");
+			});$("#23").click(function () {
+				$("#23_div").toggle();
+				$("#23_img_closed").toggle();
+				$("#23_img_open").toggle();
+				$("#23_title").toggleClass("open");
+			});$("#24").click(function () {
+				$("#24_div").toggle();
+				$("#24_img_closed").toggle();
+				$("#24_img_open").toggle();
+				$("#24_title").toggleClass("open");
+			});$("#25").click(function () {
+				$("#25_div").toggle();
+				$("#25_img_closed").toggle();
+				$("#25_img_open").toggle();
+				$("#25_title").toggleClass("open");
+			});$("#26").click(function () {
+				$("#26_div").toggle();
+				$("#26_img_closed").toggle();
+				$("#26_img_open").toggle();
+				$("#26_title").toggleClass("open");
+			});$("#27").click(function () {
+				$("#27_div").toggle();
+				$("#27_img_closed").toggle();
+				$("#27_img_open").toggle();
+				$("#27_title").toggleClass("open");
+			});$("#28").click(function () {
+				$("#28_div").toggle();
+				$("#28_img_closed").toggle();
+				$("#28_img_open").toggle();
+				$("#28_title").toggleClass("open");
+			});	if(location.hash){
+			var name=location.hash;			
+			name=name.replace('#','');
+			/*if a child tag is chosen to be opened, make sure the parent-tag is opened as well. ChildID = 'a_b' with 'a' being the parentID. */
+			var el = document.getElementsByName(name);
+			if(el.length>0) {
+			    var ind=el[0].id.indexOf('_');
+			    if(ind>0){ 
+			        parID=el[0].id.substr(0,ind);
+			        if($("#"+parID).find('h4[class="open"]').length == 0){
+				        $("#"+parID).click();
+			        }
+			    }
+			}
+			/* if name==marbound, take the latest version, this one will have the smallest id */
+			if(name=='marbound'){
+			    var allTogEls=document.getElementsByClassName('toggle');
+			    var openID=null;
+			    for(i=0;i<allTogEls.length;i++){
+			        if(!openID) openID=allTogEls[i].id;
+			        else if(allTogEls[i].id < openID) openID=allTogEls[i].id;
+			    }
+			    if(openID){
+			        if($("#"+openID).find('h4[class="open"]').length == 0){
+				        $("#"+openID).click();
+			        }
+			    }
+			}
+			
+			/*based on a hash we only want to open, not close. Check if it is already open.*/
+			if($("[name='"+name+"']").find('h4[class="open"]').length == 0){
+				$("[name='"+name+"']").click();
+			}
+			
+		}
+	</script>
+	</div><!--close content-->
+	<div id="footer">
+	 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="./MEOW_files/cc-by_80x15.png" alt="CC-BY"></a> <a href="https://www.marineregions.org/disclaimer.php">Disclaimer</a> | <a href="mailto:info@marineregions.org">info@marineregions.org</a>
+	 <div style="float:right;">
+	 <span style="padding-right: 10px;">Website developed and maintained by <a href="https://www.vliz.be/en" target="_blank">VLIZ</a></span><a href="https://www.vliz.be/en" target="_blank">&nbsp;<img src="./MEOW_files/vlizlogo.png" border="0" style="vertical-align:middle;"></a>
+	 </div>
+	</div><!--close footer-->
+	</div><!--close wrapper-->
+	<div class="chakra-portal"><div role="region" aria-live="polite" aria-label="Notifications-top" id="chakra-toast-manager-top" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto; top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-top-left" id="chakra-toast-manager-top-left" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; top: env(safe-area-inset-top, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-top-right" id="chakra-toast-manager-top-right" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom-left" id="chakra-toast-manager-bottom-left" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; bottom: env(safe-area-inset-bottom, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom" id="chakra-toast-manager-bottom" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto; bottom: env(safe-area-inset-bottom, 0px); right: env(safe-area-inset-right, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom-right" id="chakra-toast-manager-bottom-right" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; bottom: env(safe-area-inset-bottom, 0px); right: env(safe-area-inset-right, 0px);"></div></div></body><div><div><template shadowrootmode="open"><main id="wisdoliaAppContainer" style="position: fixed; direction: ltr; z-index: 2147483647; background-color: rgb(245, 252, 248); display: none; bottom: 0px; height: 100vh; width: 600px; flex-direction: column; justify-content: flex-start; align-items: flex-start; top: 0px; font-family: Outfit; right: 0px; overflow: hidden auto; margin-right: -15px; scrollbar-gutter: stable; box-shadow: rgba(18, 45, 24, 0.1) -5px 0px 32px 0px, rgba(18, 45, 24, 0.12) -1px 0px 2px 0px;"><style>
+              @keyframes spinners-react-infinity {
+                  0% {
+                      stroke-dasharray: 1, 347;
+                      stroke-dashoffset: 75;
+                  }
+                  25%, 75% {
+                      stroke-dasharray: 17, 330;
+                  }
+                  50% {
+                      stroke-dasharray: 1, 347;
+                  }
+                  100% {
+                      stroke-dasharray: 1, 347;
+                      stroke-dashoffset: 423;
+                  }
+              }
+          </style><div class="wisdolia-1bvc4cc"><button type="button" class="chakra-button wisdolia-secondary-action-button-hover-styling wisdolia-1kyy0fa"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" color="#6A6B6A"><g clip-path="url(#clip0_270_6637)"><path d="M27.5011 22.0113C27.8688 21.8565 28.122 21.3763 27.857 21.0213C26.9445 19.7997 25.4904 18.8559 24.393 17.778C23.1479 16.5555 21.9494 15.2778 20.6662 14.0949C20.6658 14.0939 20.6647 14.0931 20.6642 14.092C20.8196 14.1172 20.9818 14.0749 21.1127 13.906C22.1217 12.6055 23.0511 11.2533 24.1161 9.99485C25.1012 8.83086 26.3745 7.88186 27.2609 6.65204C27.5321 6.27533 27.3483 5.88447 27.0288 5.67867C27.1981 5.38136 27.2056 4.99516 26.8964 4.66574C26.2945 4.02485 25.6358 3.43826 25.0246 2.80598C24.3365 2.09431 23.7653 1.306 23.1455 0.538866C22.812 0.126105 22.3524 0.316868 22.1403 0.675479C20.7087 0.257027 18.8766 2.56414 18.0863 3.43228C17.0613 4.55817 15.7935 5.95073 15.0487 7.41977C15.0074 7.39641 14.9678 7.37029 14.9262 7.34723C14.6181 7.17661 14.3553 7.63023 14.6515 7.81735C14.7088 7.8534 14.7623 7.89383 14.819 7.93046C14.7972 7.98271 14.7696 8.03453 14.7493 8.08693C14.4904 7.85967 14.2008 7.65344 13.9505 7.43611C13.0285 6.63555 12.1166 5.82331 11.1985 5.01822C10.2967 4.22729 9.38855 3.44337 8.48524 2.65434C8.13524 2.34871 7.20419 1.81028 6.93315 1.35534C6.93301 0.98432 6.68824 0.622936 6.25432 0.645413C5.04522 0.708173 3.81614 1.98937 2.95997 2.78C2.11708 3.55838 1.35227 4.44199 0.797205 5.44821C0.663948 5.41391 0.537551 5.40033 0.423123 5.41829C0.237614 5.41683 0.0633437 5.51739 0.0144487 5.76522C-0.181715 6.76268 1.67498 8.00359 2.31382 8.55661C4.53292 10.4781 7.03255 11.979 8.89902 14.2851C8.85144 14.3052 8.804 14.3284 8.75715 14.3595C7.57667 15.1428 6.53046 16.2125 5.48309 17.1586C4.26612 18.2575 2.99602 19.3942 1.97521 20.683C1.90792 20.7679 1.86326 20.8568 1.83217 20.9467C1.55836 21.0562 1.40613 21.4221 1.65995 21.6959C3.21305 23.3718 5.09937 24.7227 6.60577 26.4362C6.77917 26.6334 6.96628 26.7797 7.15515 26.895C7.1156 27.4905 7.94623 28.0053 8.41824 27.4716C10.5204 25.0956 12.7692 22.9584 15.1656 20.8881C15.1739 20.9002 15.176 20.9148 15.1852 20.9266C16.4058 22.4957 18.3153 23.6936 19.881 24.889C20.697 25.5121 22.6213 27.5964 23.8142 27.2097C24.0754 27.1249 24.2606 26.902 24.2624 26.6209C24.2624 26.6139 24.26 26.6072 24.26 26.6003C24.4259 26.6683 24.6191 26.6651 24.8071 26.5422C25.4818 26.1003 26.003 25.3836 26.5477 24.7976C27.0348 24.2738 28.0906 23.4773 27.9936 22.6818C27.9518 22.3388 27.7846 22.1152 27.5011 22.0113ZM22.3953 1.97565C23.2079 3.43549 24.4818 4.79696 25.6589 5.90344C25.6744 5.91804 25.6907 5.92709 25.7065 5.94022C25.4379 6.13157 25.1882 6.35546 24.9459 6.59045C24.3786 5.97627 23.7059 5.44456 23.0799 4.89912C22.3784 4.28772 21.6816 3.67179 20.9928 3.04637C21.033 3.01105 21.0706 2.97266 21.1111 2.93764C21.5257 2.5799 22.0475 2.36549 22.3953 1.97565ZM20.4379 3.55605C21.0169 4.13213 21.6061 4.69756 22.2038 5.25525C22.9054 5.90972 23.5745 6.63818 24.3101 7.26243C24.1201 7.48165 23.9341 7.70467 23.755 7.93032C23.101 7.38561 22.2974 6.94804 21.6536 6.42114C20.9083 5.8112 20.2251 5.12973 19.5864 4.40959C19.8634 4.11812 20.1478 3.83409 20.4379 3.55605ZM19.0678 4.9559C19.0927 4.92802 19.1198 4.90233 19.1449 4.87475C19.8348 5.69458 20.5823 6.45588 21.3926 7.1607C21.9334 7.63111 22.5578 8.22339 23.2322 8.59529C23.1578 8.69162 23.0804 8.79174 23.0072 8.88545C22.783 9.17239 22.569 9.47116 22.3524 9.76716C21.8138 9.28901 21.1786 8.90573 20.5859 8.5048C19.6352 7.86186 18.6973 7.21616 17.8288 6.47106C18.2277 5.95336 18.6335 5.4412 19.0678 4.9559ZM17.4108 7.0146C17.9987 7.54266 18.6097 8.04008 19.2506 8.50874C20.0952 9.12613 20.9568 9.8759 21.8687 10.4383C21.5832 10.8504 21.3029 11.2671 21.0404 11.6941C20.2585 10.9692 19.2528 10.3768 18.4224 9.73403C17.7697 9.22873 17.109 8.7392 16.428 8.27915C16.7626 7.86522 17.0867 7.44005 17.4108 7.0146ZM15.427 9.32054C15.5169 9.29076 15.6042 9.24566 15.6792 9.1632C15.7947 9.03666 15.9006 8.90019 16.0123 8.76985C16.7597 9.33221 17.4804 9.9299 18.1956 10.5352C18.9261 11.1533 19.7171 11.9984 20.6196 12.4088C20.473 12.669 20.3242 12.9285 20.1904 13.1942C20.0875 13.3985 20.1269 13.6204 20.2365 13.7949C20.2003 13.7901 20.1619 13.7955 20.1246 13.7961C18.6736 12.2595 17.0505 10.8593 15.3584 9.52867C15.3942 9.46576 15.4196 9.39658 15.427 9.32054ZM8.12721 25.3757C8.04007 25.3878 7.95819 25.4166 7.88376 25.4621C7.76291 25.3353 7.64016 25.2099 7.52237 25.0805C7.05648 24.5677 6.53528 24.1566 5.97598 23.7515C5.06055 23.0888 4.20292 22.2956 3.27275 21.6321C3.46804 21.4298 3.67631 21.2408 3.87642 21.0433C4.48636 21.6397 5.11937 22.2122 5.78463 22.7474C6.49631 23.3201 7.58791 24.4079 8.55223 24.3681C8.88807 24.354 9.03257 23.9766 8.81626 23.7307C8.54654 23.4239 8.18705 23.3172 7.82727 23.1323C7.27439 22.8482 6.76311 22.4939 6.25899 22.1325C5.59226 21.6549 4.96553 21.1241 4.34698 20.5845C4.6942 20.2531 5.05019 19.9309 5.40661 19.6092C6.24147 20.4857 7.12275 21.317 8.04708 22.0989C8.5226 22.501 9.20976 23.209 9.88903 23.3642C9.26814 24.0081 8.67308 24.674 8.12721 25.3757ZM10.4837 22.7614C10.4769 22.7536 10.4733 22.745 10.4658 22.7377C9.93895 22.2257 9.12831 21.9132 8.5264 21.4774C7.57871 20.7916 6.68561 20.0231 5.83002 19.2261C6.17243 18.9222 6.52156 18.6262 6.8682 18.3268C7.58615 18.8459 8.32965 19.3281 9.09562 19.774C9.78409 20.1748 10.6643 20.8456 11.5067 20.7767C11.9306 20.742 12.063 20.1197 11.611 20.005C10.1445 19.6325 8.64841 18.7764 7.34781 17.9113C7.82537 17.502 8.29958 17.0913 8.77598 16.6816C9.62514 17.2894 10.4565 17.9183 11.2687 18.5761C11.8625 19.057 12.5035 19.8483 13.2079 20.2749C12.2836 21.0782 11.3613 21.8957 10.4837 22.7614ZM16.0531 19.8013C15.8779 19.6705 15.7093 19.639 15.561 19.6717C15.291 19.2523 14.6656 19.0118 14.1702 19.437C14.1173 19.4824 14.0639 19.5299 14.0111 19.5755C13.4373 18.9229 12.4276 18.4354 11.7638 17.9345C10.9716 17.3364 10.1811 16.7231 9.33586 16.1997C9.50371 16.0542 9.67433 15.9104 9.8413 15.7645C10.2485 15.4083 10.1522 14.8765 9.84773 14.5394C10.2268 14.3017 10.4565 13.7246 10.0954 13.2604C8.37271 11.0478 6.07742 9.49481 3.88328 7.794C3.4962 7.49391 2.6774 6.63336 1.87012 6.03261C1.87946 6.0202 1.89026 6.0094 1.89975 5.997C8.23843 10.769 13.6624 16.2906 18.995 22.0428C18.0178 21.2906 17.0414 20.5378 16.0531 19.8013ZM25.2868 23.5366C24.7829 24.1402 24.0683 24.9106 23.8606 25.7025C23.7615 25.5837 23.6447 25.4681 23.5208 25.3544C17.8461 17.7734 10.5026 10.3542 2.2553 5.56906C2.56472 5.21351 2.90334 4.8857 3.25815 4.57437C10.7907 10.393 18.1828 16.3294 24.257 23.718C24.6425 24.1868 25.4697 23.551 25.0999 23.0676C19.3336 15.5248 11.5402 9.54867 3.77381 4.16001C3.91539 4.04864 4.04835 3.92838 4.19445 3.82212C4.86161 3.33741 5.89527 2.85736 6.50419 2.19516C6.77669 2.76147 7.2617 3.33025 7.77006 3.85044C7.32037 3.50292 6.8755 3.1535 6.44143 2.79971C6.18221 2.58837 5.81061 2.94143 6.06735 3.17379C10.3977 7.08918 15.4407 10.4317 19.3892 14.7541C19.4254 14.8267 19.4716 14.9007 19.5397 14.9764C19.8071 15.2733 20.083 15.5641 20.354 15.8586C21.2652 16.9503 22.1047 18.1064 22.843 19.3517C23.0726 19.7391 23.5241 19.6683 23.7464 19.4063C24.6811 20.3782 25.7365 21.4941 26.9431 21.9728C26.248 22.139 25.6927 23.0504 25.2868 23.5366Z" fill="#6A6B6A"></path></g><defs><clippath id="clip0_270_6637"><rect width="28" height="28" fill="white"></rect></clippath></defs></svg></button></div><div class="wisdolia-1e2nfxc"><div class="wisdolia-closg5"><svg fill="none" viewBox="0 0 131 55" style="color: black; overflow: visible; width: 90px;"><defs><path d="M46.57 45.5138C36.346 55.4954 19.8919 55.4954 9.66794 45.5138C-0.55598 35.5321 -0.55598 19.4678 9.66794 9.48624C19.8919 -0.495412 36.346 -0.495412 46.57 9.48624L84.4303 45.5138C94.6543 55.4954 111.108 55.4954 121.332 45.5138C131.556 35.5321 131.556 19.4678 121.332 9.48624C111.108 -0.495412 94.6543 -0.495412 84.4303 9.48624L46.57 45.5138Z" id="spinners-react-infinity-path"></path></defs><use stroke="rgba(0,0,0,0.44)" stroke-width="10.15" xlink:href="#spinners-react-infinity-path"></use><use fill="none" stroke="currentColor" stroke-dasharray="1, 347" stroke-dashoffset="75" stroke-linecap="round" stroke-width="10.15" xlink:href="#spinners-react-infinity-path" style="animation: 1.4s linear 0s infinite normal none running spinners-react-infinity;"></use></svg><div class="wisdolia-uuwpdd"><img src="chrome-extension://ciknpklcipibmfbgjmdmfdfalklfdlne/WisdomTree.png" class="chakra-image wisdolia-ca56nw"></div></div></div><span id="__chakra_env" hidden=""></span></main><style data-emotion="wisdolia-global" data-s=""></style><style data-emotion="wisdolia-global" data-s=""></style><style data-emotion="wisdolia-global" data-s=""></style><style data-emotion="wisdolia" data-s=""></style></template></div></div><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

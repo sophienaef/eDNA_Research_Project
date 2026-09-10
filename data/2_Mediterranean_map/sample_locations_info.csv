@@ -1,0 +1,26 @@
+﻿Source,Ecoregion,Country,Common_MPA,MPA_Identi,decimalLatitude,decimalLongitude
+ACTNOW,Levantine Sea,Israel,Evtah,10001,31.72887,34.54945
+ACTNOW,Levantine Sea,Cyprus,Amathounta,20001,34.69988789,33.14713723
+ACTNOW,Levantine Sea,Cyprus,Capo Greco,20002,34.96577804,34.08923389
+ACTNOW,Levantine Sea,Cyprus,Kakoskali,20003,35.11517591,32.2965458
+ACTNOW,Aegean Sea,Greece,Voreia Karpathos,30001,35.62115016,27.15829658
+ACTNOW,Aegean Sea,Greece,Gyaros,30002,37.5356139,24.85290089
+ACTNOW,Ionian Sea,Malta,MT0000105,40001,35.8993786,14.54416858
+ACTNOW,Ionian Sea,Malta,MT0000102,40002,35.94619457,14.32890704
+ACTNOW,Alboran Sea,Spain,Maro-Cerro Gordo,50001,36.72895605,-3.893620335
+ACTNOW,Alboran Sea,Spain,Cabo de Gata,50002,37.00936222,-1.869668579
+ACTNOW,Western Mediterranean,Spain,Cabo de Palos,50003,37.6670724,-0.710753286
+ACTNOW,Ionian Sea,Italy,Porto Cesareo,70001,40.24406776,17.88984693
+ACTNOW,Adriatic Sea,Italy,Torre Guaceto,70002,40.74517701,17.74784393
+SPYGEN,Western Mediterranean,Italy,Capo Gallo - Isola Delle Femmine,70003,38.21073,13.23165
+SPYGEN,Ionian Sea,Italy,Plemmirio,70004,37.00083,15.3348
+SPYGEN,Western Mediterranean,Italy,Cala_Spalmatoio,70005,42.26215,11.111683
+SPYGEN,Western Mediterranean,Italy,Montecristo,70006,42.328126,10.288623
+ACTNOW,Adriatic Sea,Croatia,Kornati,80001,43.7047347,15.53799994
+ACTNOW,Adriatic Sea,Croatia,Telascica,80002,43.97903658,15.05269035
+SPYGEN,Western Mediterranean,France,Marseille_Carry,90004,43.3292669,5.2335014
+SPYGEN,Western Mediterranean,France,Cerbere_Banyuls,90005,42.47399,3.15602
+SPYGEN,Western Mediterranean,France,RNBB,90006,41.51088333,9.302483333
+SPYGEN,Western Mediterranean,France,Nonza,90007,42.758633,9.33495
+SPYGEN,Western Mediterranean,France,Calvi,90008,42.576198,8.799355
+SPYGEN,Western Mediterranean,France,Marseille_calanques_Riou,90009,43.26846,5.35562
