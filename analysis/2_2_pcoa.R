@@ -139,8 +139,6 @@ plot_jac <- ggplot(dat_jac, aes(
   geom_hline(yintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_vline(xintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_point(size = 6) +
-  scale_x_reverse() +
-  scale_y_reverse() +
   scale_shape_manual(
     values = c(
       "Levantine Sea" = 24,
@@ -177,8 +175,6 @@ plot_turn <- ggplot(dat_turn, aes(x = PCoA1, y = PCoA2,
   geom_hline(yintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_vline(xintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_point(size = 6) +  
-  scale_x_reverse() +
-  scale_y_reverse() +
   scale_shape_manual(
     values = c(
       "Levantine Sea" = 24,
