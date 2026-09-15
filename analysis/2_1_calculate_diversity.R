@@ -1,13 +1,15 @@
 # install.packages("dplyr")
 # install.packages("tidyr")
+# install.packages("vegan")
 # install.packages("betapart")
 
 library(dplyr)
 library(tidyr)
+library(vegan)
 library(betapart)
 
 eDNA_merged_MPA_PA <- read.csv("0_1_presence_absence/eDNA_merged_MPA_PA.csv", header = TRUE, sep = ",", dec = ".", check.names = FALSE)
-combined_database <- read.csv("../data/1_species_database/1_2_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
+combined_database <- read.csv("../data/1_species_database/1_4_additions_database_combined/1_4_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
 
 ### filter for invasive species only 
 
@@ -23,6 +25,28 @@ invasive_eDNA_merged_MPA_PA <- eDNA_merged_MPA_PA %>%
 
 invasive_eDNA_merged_MPA_PA <- invasive_eDNA_merged_MPA_PA %>%
   select(where(~ !all(. == 0, na.rm = TRUE)))
+
+# ### gamma diversity (total) = number of invasive species
+# 
+# gamma_diversity <- invasive_eDNA_merged_MPA_PA %>%
+#   summarise(
+#     gamma_diversity = n_distinct(species_name_fishbase)
+#   )
+# 
+# ### alpha diversity (per location) = richness per MPA
+# 
+# alpha_diversity <- invasive_eDNA_merged_MPA_PA %>%
+#   pivot_longer(
+#     cols = matches("^\\d+"),
+#     names_to = "MPA_ID",
+#     values_to = "presence"
+#   ) %>%
+#   filter(presence > 0) %>%
+#   group_by(MPA_ID) %>%
+#   summarise(
+#     alpha_diversity = n_distinct(species_name_fishbase),
+#     .groups = "drop"
+#   )
 
 ### beta diversity (between locations)
 
@@ -99,9 +123,28 @@ rownames(average_beta_fd_indices) <- paste(
   sep="_"
 )
 
+### overall mean and SD of beta diversity
+
+overall_beta_stats <- data.frame(
+  index = c("jac_diss", "jac_turn", "jac_nest"),
+  mean = c(
+    mean(Beta_jac$jac_diss_Mean, na.rm = TRUE),
+    mean(Beta_turn$jac_turn_Mean, na.rm = TRUE),
+    mean(Beta_nes$jac_nest_Mean, na.rm = TRUE)
+  ),
+  sd = c(
+    sd(Beta_jac$jac_diss_Mean, na.rm = TRUE),
+    sd(Beta_turn$jac_turn_Mean, na.rm = TRUE),
+    sd(Beta_nes$jac_nest_Mean, na.rm = TRUE)
+  )
+)
+
+overall_beta_stats
+
 ###
 
 # dir.create("2_diversity", showWarnings = FALSE)
 
 write.csv(average_beta_fd_indices , "2_diversity/2_1_beta_diversity.csv", row.names = FALSE)
-# write.csv(average_beta_fd_indices , "2_diversity/2_1_beta_diversity.csv", row.names = FALSE, quote = FALSE)
+write.csv(overall_beta_stats , "2_diversity/2_1_overall_beta_stats.csv", row.names = FALSE)
+
