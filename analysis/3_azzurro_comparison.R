@@ -172,7 +172,7 @@ boxplot <- ggplot(
     alpha = 0.4
   ) +
   labs(
-    x = "Species",
+    x = NULL,
     y = "Distance (km)"
   ) +
   theme_minimal() +

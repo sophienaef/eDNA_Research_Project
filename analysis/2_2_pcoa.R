@@ -138,7 +138,7 @@ plot_jac <- ggplot(dat_jac, aes(
   )) +
   geom_hline(yintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_vline(xintercept = 0, colour = "grey70", linewidth = 0.4) +
-  geom_point(size = 6) +
+  geom_point(size = 5) +
   scale_shape_manual(
     values = c(
       "Levantine Sea" = 24,
@@ -174,7 +174,7 @@ plot_turn <- ggplot(dat_turn, aes(x = PCoA1, y = PCoA2,
 )) +
   geom_hline(yintercept = 0, colour = "grey70", linewidth = 0.4) +
   geom_vline(xintercept = 0, colour = "grey70", linewidth = 0.4) +
-  geom_point(size = 6) +  
+  geom_point(size = 5) +  
   scale_shape_manual(
     values = c(
       "Levantine Sea" = 24,
@@ -237,7 +237,7 @@ map_jac <- ggplot() +
     fill = NA,
     colour = "black",
     stroke = 0.6,
-    size = 3.5,
+    size = 4,
     alpha = 0.4
   ) +
   
@@ -250,7 +250,7 @@ map_jac <- ggplot() +
       fill = colour_value_jac,
       shape = Ecoregion
     ),
-    size = 4
+    size = 5
   ) +
   
   scale_shape_manual(
@@ -264,7 +264,7 @@ map_jac <- ggplot() +
   
   scale_colour_gradientn(
     colours = rainbow_pal,
-    name = "PCoA Position"
+    guide = "none"
   ) +
   scale_fill_gradientn(
     colours = rainbow_pal,
@@ -283,14 +283,26 @@ map_jac <- ggplot() +
   ) +
   
   theme_bw() +
-  theme(    legend.position = "right",
-            legend.text = element_text(size = 11),
-            legend.title = element_text(size = 12),
-            legend.key = element_rect(fill = "white", colour = "white"),
-            axis.text = element_text(size = 10),
-            axis.title = element_text(size = 13),
-            panel.grid = element_blank(),
-            panel.background = element_rect(fill = "#e7f5fb", colour = NA)
+  theme(
+    legend.position = c(0.14, 0.18),
+    legend.background = element_rect(
+      fill = "#F5F0EB",
+      color = "#A08A6F",
+      linewidth = 0.2
+    ),
+    legend.key = element_rect(
+      fill = "#F5F0EB",
+      colour = "#F5F0EB"
+    ),
+    legend.text = element_text(size = 10),
+    legend.title = element_text(size = 11),
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 15),
+    panel.grid = element_blank(),
+    panel.background = element_rect(
+      fill = "#e7f5fb",
+      colour = NA
+    )
   )
 
 print(map_jac)
@@ -324,7 +336,7 @@ map_turn <- ggplot() +
     fill = NA,
     colour = "black",
     stroke = 0.6,
-    size = 3.5,
+    size = 4,
     alpha = 0.4
   ) +
   
@@ -337,7 +349,7 @@ map_turn <- ggplot() +
       fill = colour_value_turn,
       shape = Ecoregion
     ),
-    size = 4
+    size = 5
   ) +
   
   scale_shape_manual(
@@ -351,7 +363,7 @@ map_turn <- ggplot() +
   
   scale_colour_gradientn(
     colours = rainbow_pal,
-    name = "PCoA Position"
+    guide = "none"
   ) +
   scale_fill_gradientn(
     colours = rainbow_pal,
@@ -370,20 +382,11 @@ map_turn <- ggplot() +
   ) +
   
   theme_bw() +
-  theme(    legend.position = "right",
-            legend.text = element_text(size = 11),
-            legend.title = element_text(size = 12),
-            legend.key = element_rect(fill = "white", colour = "white"),
-            axis.text = element_text(size = 10),
-            axis.title = element_text(size = 13),
+  theme(    legend.position = "none",
+            axis.text = element_text(size = 12),
+            axis.title = element_text(size = 15),
             panel.grid = element_blank(),
             panel.background = element_rect(fill = "#e7f5fb", colour = NA)
-  )
-
-map_turn <- map_turn +
-  guides(
-    colour = guide_colourbar(order = 1),
-    shape = guide_legend(order = 2)
   )
 
 print(map_turn)

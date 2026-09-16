@@ -25,11 +25,11 @@ produces Supporting Table 2
 
 ## 2_2_pcoa.R
 PCoA
-produces Figure 2
+produces Figure 3
 
 ## 3_azzurro_comparison.R
 eDNA with database radius comparison
-produces Figure 3 and Supporting Figures 6 to 10
+produces Figure 2 and Supporting Figures 6 to 10
 
 ## 4_1_GLMM_eDNA.R
 GLMM of eDNA data
@@ -45,7 +45,7 @@ produces Supporting Figures 1 to 5
 ## inputs
 
 ### silhouettes directory
-silhouettes for Figure 3
+silhouettes for Figure 2
 used in 3_azzurro_comparison.R
 
 ### cmems_mod_glo_phy_anfc_0.083deg_PT1H-m_1787130902893.nc (zipped)
