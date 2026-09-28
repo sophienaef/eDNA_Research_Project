@@ -68,7 +68,9 @@ transects_sf <- st_as_sf(
 ) %>%
   st_transform(st_crs(world))
 
-# ecoregions
+# load ecoregions
+meow <- st_read("meow/meow_ecos.shp") %>%
+  st_make_valid()
 
 med_names <- c(
   "Alboran Sea",
@@ -79,6 +81,10 @@ med_names <- c(
   "Levantine Sea",
   "Tunisian Plateau/Gulf of Sidra"
 )
+
+med <- meow %>%
+  filter(ECOREGION %in% med_names) %>%
+  st_transform(st_crs(world))
 
 # load depths / bathymetry
 
@@ -103,6 +109,8 @@ custom_labels <- data.frame(
     "Aegean Sea",
     "Gulf of Sidra"
   ),
+  # x = c(-1.5, 6.1, 17.6, 19, 25.8, 17.5),
+  # y = c(36.3, 39.7, 42, 37, 36, 33.5)
   x = c(-0.95, 6.2, 15.25, 19, 25.8, 17.5),
   y = c(36.55, 40.7, 43.1, 37.8, 36, 33.4)
 ) %>%
@@ -124,44 +132,6 @@ combined_ecoregion_labels <- bind_rows(
   custom_labels
 )
 
-# country labels
-mediterranean_countries_labels <- c(
-  "Spain", "France", "Italy", "Malta",
-  "Croatia", "Greece", "Cyprus"
-)
-
-med_labels <- world %>%
-  filter(name %in% mediterranean_countries_labels) %>%
-  st_point_on_surface()
-
-coords <- st_coordinates(med_labels)
-
-med_labels <- med_labels %>%
-  mutate(
-    x = coords[,1],
-    y = coords[,2]
-  ) %>%
-  mutate(
-    x = case_when(
-      name == "France" ~ x + 0.5,
-      name == "Italy" ~ x + 0.4,
-      name == "Malta" ~ x + 1.2,      
-      name == "Cyprus" ~ x,
-      name == "Greece" ~ x - 0.1,
-      name == "Croatia" ~ x + 1.2,
-      TRUE ~ x
-    ),
-    y = case_when(
-      name == "France" ~ y - 1,
-      name == "Italy" ~ y,
-      name == "Malta" ~ y,
-      name == "Cyprus" ~ y - 0.5,
-      name == "Greece" ~ y + 0.6,
-      name == "Croatia" ~ y + 0.9,
-      TRUE ~ y
-    )
-  )
-
 # sea and strait labels
 
 label_data <- data.frame(
@@ -170,15 +140,15 @@ label_data <- data.frame(
     "Atlantic \nOcean",
     "Strait of \nGibraltar",
     "Suez Canal",
-    "Strait of Sicily"
+    "Strait of \nSicily"
   ),
   
   x = c(
-    34.6, -7.0, -5.35, 31.0, 13.5
+    34.6, -7.0, -5.35, 31.2, 12.8
   ),
   
   y = c(
-    27.3, 35.4, 36.65, 30.4, 37.3
+    27.3, 35.4, 36.65, 30.4, 36.85
   )
 )
 
@@ -193,12 +163,10 @@ connection_lines <- data.frame(
 )
 
 # plot
-# green colour #00A859
 
 ggplot() +
   
   # depths / bathymetry
-  
   geom_sf(
     data = bathy_coast,
     fill = "#f6fbfe",
@@ -224,7 +192,7 @@ ggplot() +
   # samples
   geom_sf(
     data = transects_sf,
-    color = "black",
+    color = "black", #73b5c7 #FF8C00 
     size = 1.6,
     shape = 19
   ) +
@@ -239,7 +207,7 @@ ggplot() +
     ),
     linetype = "dashed",
     linewidth = 0.25,
-    color = "#1a5f7a"
+    color = "#1a5f7a" #006AA0
   ) +
   
   # sea and strait labels
@@ -250,21 +218,9 @@ ggplot() +
       y = y,
       label = name
     ),
-    size = 2,
+    size = 1.8,
     color = "#1a5f7a",
     vjust = 0
-  ) +
-  
-  # country labels
-  geom_text(
-    data = med_labels,
-    aes(
-      x = x,
-      y = y,
-      label = name
-    ),
-    size = 2,
-    color = "#957D63"
   ) +
   
   # ecoregion labels
@@ -274,7 +230,7 @@ ggplot() +
       label = ECOREGION,
       geometry = geometry
     ),
-    size = 2,
+    size = 1.8,
     color = "#006B50"
   ) +
   
