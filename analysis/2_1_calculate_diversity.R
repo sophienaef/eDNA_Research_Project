@@ -9,7 +9,7 @@ library(vegan)
 library(betapart)
 
 eDNA_merged_MPA_PA <- read.csv("0_1_presence_absence/eDNA_merged_MPA_PA.csv", header = TRUE, sep = ",", dec = ".", check.names = FALSE)
-combined_database <- read.csv("../data/1_species_database/1_4_additions_database_combined/1_4_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
+combined_database <- read.csv("../data/1_species_database/1_2_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
 
 ### filter for invasive species only 
 
