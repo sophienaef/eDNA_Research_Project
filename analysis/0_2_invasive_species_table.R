@@ -6,7 +6,6 @@ library(tidyr)
 
 eDNA_merged_Ecoregion_PA <- read.csv("0_1_presence_absence/eDNA_merged_Ecoregion_PA.csv", header = TRUE, sep = ",", dec = ".")
 eDNA_merged_MPA_PA <- read.csv("0_1_presence_absence/eDNA_merged_MPA_PA.csv", header = TRUE, sep = ",", dec = ".", check.names = FALSE)
-metadata <- read.csv("../data/3_eDNA_cleaning/METADATA_MERGED_edited.csv", header = TRUE, sep = ",", dec = ".")
 combined_database <- read.csv("../data/1_species_database/1_2_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
 
 ### filter for invasive species only 

@@ -525,6 +525,7 @@ ggsave(
 # write csv
 
 uni_glmm_results_azzurro <- uni_glmm_results_azzurro %>%
+  mutate(across(where(is.numeric), ~ round(.x, 5))) %>%
   arrange(factor(predictor, levels = c(
     "Mean Sea Surface Temperature (SST)",
     "Mean Sea Surface Salinity (SSS)",
