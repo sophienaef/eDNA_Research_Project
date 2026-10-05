@@ -4,8 +4,13 @@
 # install.packages("broom.mixed")
 # install.packages("purrr")
 # install.packages("ggplot2")
+# install.packages("corrplot")
+# install.packages("car")
+# install.packages("factoextra")
 # install.packages("RANN")
 # install.packages("ncdf4")
+# install.packages("tidyverse")
+# install.packages("sf")
 # install.packages("raster")
 # install.packages("gdistance")
 # install.packages("sp")
@@ -16,37 +21,31 @@ library(glmmTMB)
 library(broom.mixed)
 library(purrr)
 library(ggplot2)
+library(corrplot)
+library(car)
+library(factoextra)
 library(RANN)
 library(ncdf4)
+library(tidyverse)
+library(sf)
 library(raster)
 library(gdistance)
 library(sp)
 
 invasive_richness_Transect_ID <- read.csv("1_richness/1_1_invasive_richness_Transect_ID.csv", header = TRUE, sep = ",", dec = ".", check.names = FALSE)
 metadata <- read.csv("../data/3_eDNA_cleaning/METADATA_MERGED_edited.csv", header = TRUE, sep = ",", dec = ".")
-combined_database <- read.csv("../data/1_species_database/1_2_combined_database_complete.csv", header = TRUE, sep = ",", dec = ".")
 threat_med <- readRDS("Threat_med_Coll.rds")
+nc_sst <- nc_open("sst_mon_ltm_1991_2020.nc")
+nc_sss <- nc_open("cmems_mod_glo_phy_anfc_0.083deg_PT1H-m_1787130902893.nc")
 nc_grav <- nc_open("gravity4326.nc")
 nc_circ <- nc_open("cmems_obs-mob_glo_phy-cur_my_0.25deg_P1M-m_1787830666253.nc")
 
 ### filter metadata
 
 short_metadata <- metadata[, c(
-  "Transect_ID", "MPA_Identi", "Date_Collection",
-  "decimalLatitude", "decimalLongitude",
-  "mean_SST_2023", "mean_SST_2024",
-  "min_SST_2023", "min_SST_2024", 
-  "max_SST_2023", "max_SST_2024",
-  "mean_SSS_2023", "mean_SSS_2024", 
-  "mean_PP_2023", "mean_PP_2024",
-  
-  "Gravity", "total_habitat_area_m2", 
-  
-  "mean_bathy", "min_bathy", "max_bathy",
-  
-  "Fishing_Pressure_AIS_23_24"
+  "Transect_ID", "MPA_Identi",
+  "decimalLatitude", "decimalLongitude"
 )]
-
 
 # remove blank rows
 short_metadata <- short_metadata %>%
@@ -55,119 +54,16 @@ short_metadata <- short_metadata %>%
 # remove duplicates info per Transect_ID
 short_metadata <- short_metadata %>%
   distinct()
+# n_distinct(short_metadata$Transect_ID)
 
-# simplify further per year respectively
 short_metadata <- short_metadata %>%
-  mutate(
-    Year = as.integer(format(as.Date(Date_Collection, format = "%d/%m/%Y"), "%Y"))
-  )
-
-# function
-select_columns_by_year <- function(data, year) {
-  
-  pattern <- paste0("_(", paste(year, collapse = "|"), ")$")
-  
-  year_cols <- grep(pattern, colnames(data), value = TRUE)
-  
-  static_cols <- c(
-    "Transect_ID", "MPA_Identi", "Date_Collection", 
-    "decimalLatitude", "decimalLongitude",
-    "Gravity", "total_habitat_area_m2", 
-    "mean_bathy", "min_bathy", "max_bathy",
-    "Fishing_Pressure_AIS_23_24"
-  )
-  
-  selected_cols <- unique(c(static_cols, year_cols))
-  
-  data[, selected_cols, drop = FALSE]
-}
-
-simplified_2023 <- short_metadata %>%
-  filter(Year == 2023) %>%
-  select_columns_by_year(2023)
-simplified_2024 <- short_metadata %>%
-  filter(Year == 2024) %>%
-  select_columns_by_year(2024)
-
-simplified_2023 <- simplified_2023 %>%
-  rename_with(~ sub("_2023$", "_23_24", .x), ends_with("_2023"))
-simplified_2024 <- simplified_2024 %>%
-  rename_with(~ sub("_2024$", "_23_24", .x), ends_with("_2024"))
-
-simplified_data <- bind_rows(simplified_2023, simplified_2024)
-
-simplified_data <- simplified_data%>%
   filter(Transect_ID != "90007.2.2")
 
-### add threat info
+analysis_data <- short_metadata
 
-basic_metadata <- short_metadata[, c(
-  "Transect_ID", "MPA_Identi",
-  "decimalLatitude", "decimalLongitude"
-)]
+### extrapolation 
 
-basic_metadata$decimalLatitude <- round(basic_metadata$decimalLatitude, 2)
-basic_metadata$decimalLongitude <- round(basic_metadata$decimalLongitude, 2)
-
-enriched_metadata <- basic_metadata
-
-for (df_name in names(threat_med)) {
-  
-  threat_df <- threat_med[[df_name]]
-  
-  names(threat_df)[names(threat_df) == "X"] <- "decimalLongitude"
-  names(threat_df)[names(threat_df) == "Y"] <- "decimalLatitude"
-  
-  threat_df <- threat_df %>%
-    dplyr::select(decimalLongitude, decimalLatitude, var1.pred)
-  
-  threat_coords <- as.matrix(threat_df[, c("decimalLongitude", "decimalLatitude")])
-  sample_coords <- as.matrix(enriched_metadata[, c("decimalLongitude", "decimalLatitude")])
-  
-  nn <- nn2(threat_coords, sample_coords, k = 1)
-  
-  enriched_metadata[[df_name]] <- threat_df$var1.pred[nn$nn.idx]
-}
-
-### merge data for analysis
-
-analysis_data <- simplified_data %>%
-  left_join(
-    invasive_richness_Transect_ID %>%
-      rename(invasive_richness = invasive_richness_Transect_ID),
-    by = "Transect_ID"
-  ) %>%
-  mutate(
-    invasive_richness = replace_na(invasive_richness, 0)
-  ) %>%
-  relocate(invasive_richness, .after = MPA_Identi)
-
-# remove duplicate transects
-analysis_data <- analysis_data %>%
-  distinct(Transect_ID, .keep_all = TRUE)
-
-# add enriched
-
-enriched_metadata <- enriched_metadata %>%
-  dplyr::select(-MPA_Identi, -decimalLatitude, -decimalLongitude)
-
-analysis_data <- analysis_data %>%
-  left_join(
-    enriched_metadata,
-    by = "Transect_ID"
-  )
-
-### gravity data (extrapolation)
-
-lon_grid <- ncvar_get(nc_grav, "lon")
-lat_grid <- ncvar_get(nc_grav, "lat")
-grav_full <- ncvar_get(nc_grav, "Band1")  
-nc_close(nc_grav)
-
-# matrices
-grav_mat <- grav_full
-
-# coordinates
+## extract data coords
 
 coords <- analysis_data %>%
   dplyr::select(
@@ -176,7 +72,7 @@ coords <- analysis_data %>%
     lon = decimalLongitude
   )
 
-# function
+## function
 
 extrapolate_func <- function(
     lon,
@@ -230,6 +126,112 @@ extrapolate_func <- function(
   as.numeric(predict(fit, newdata = newdata))
 }
 
+### SSS data
+
+# coordinates
+lon_grid <- ncvar_get(nc_sss, "longitude")
+lat_grid <- ncvar_get(nc_sss, "latitude")
+
+# time
+time_raw   <- ncvar_get(nc_sss, "time")
+time_units <- ncatt_get(nc_sss, "time", "units")$value
+
+origin <- sub("seconds since ", "", time_units)
+
+file_date <- as.POSIXct(
+  time_raw,
+  origin = origin,
+  tz = "UTC"
+)
+
+sss_full <- ncvar_get(nc_sss, "so")
+
+# close NetCDF
+nc_close(nc_sss)
+
+# matrices
+sss_mat <- sss_full
+
+## function
+
+# extrapolate
+
+sss_data <- coords %>%
+  rowwise() %>%
+  mutate(
+    sss = extrapolate_func(
+      lon = lon,
+      lat = lat,
+      lon_grid = lon_grid,
+      lat_grid = lat_grid,
+      mat = sss_mat,
+      radius = 5
+    )
+  ) %>%
+  ungroup()
+
+# add to data
+
+analysis_data <- analysis_data %>%
+  left_join(
+    sss_data %>%
+      dplyr::select(Transect_ID, sss),
+    by = "Transect_ID"
+  )
+
+### SST data 
+
+lon_grid <- ncvar_get(nc_sst, "lon")   
+lat_grid <- ncvar_get(nc_sst, "lat")
+
+time_raw   <- ncvar_get(nc_sst, "time")
+time_units <- ncatt_get(nc_sst, "time", "units")$value 
+origin     <- sub(".*since ", "", time_units)
+file_dates <- as.Date(time_raw, origin = origin)        
+
+sst_full <- ncvar_get(nc_sst, "sst")
+
+# close 
+nc_close(nc_sst)
+
+# matrices
+sst_mat <- sst_full[, , 1]
+
+# extrapolate
+
+sst_data <- coords %>%
+  rowwise() %>%
+  mutate(
+    sst = extrapolate_func(
+      lon = lon,
+      lat = lat,
+      lon_grid = lon_grid,
+      lat_grid = lat_grid,
+      mat = sst_mat,
+      radius = 5
+    )
+  ) %>%
+  ungroup()
+
+# add to data
+
+analysis_data <- analysis_data %>%
+  left_join(
+    sst_data %>%
+      dplyr::select(Transect_ID, sst),
+    by = "Transect_ID"
+  )
+
+### gravity data (extrapolation)
+
+lon_grid <- ncvar_get(nc_grav, "lon")
+lat_grid <- ncvar_get(nc_grav, "lat")
+grav_full <- ncvar_get(nc_grav, "Band1")  
+nc_close(nc_grav)
+
+# matrices
+grav_mat <- grav_full
+
 # extrapolate
 
 grav_data <- coords %>%
@@ -255,6 +257,62 @@ analysis_data <- analysis_data %>%
     by = "Transect_ID"
   )
 
+### add threat info
+
+short_metadata$decimalLatitude <- round(short_metadata$decimalLatitude, 2)
+short_metadata$decimalLongitude <- round(short_metadata$decimalLongitude, 2)
+
+# # split threat_med into dfs
+# list2env(threat_med, envir = .GlobalEnv)
+
+enriched_metadata <- short_metadata
+
+for (df_name in names(threat_med)) {
+  
+  threat_df <- threat_med[[df_name]]
+  
+  names(threat_df)[names(threat_df) == "X"] <- "decimalLongitude"
+  names(threat_df)[names(threat_df) == "Y"] <- "decimalLatitude"
+  
+  threat_df <- threat_df %>%
+    dplyr::select(decimalLongitude, decimalLatitude, var1.pred)
+  
+  threat_coords <- as.matrix(threat_df[, c("decimalLongitude", "decimalLatitude")])
+  sample_coords <- as.matrix(enriched_metadata[, c("decimalLongitude", "decimalLatitude")])
+  
+  nn <- nn2(threat_coords, sample_coords, k = 1)
+  
+  enriched_metadata[[df_name]] <- threat_df$var1.pred[nn$nn.idx]
+}
+
+### merge data for analysis
+
+analysis_data <- analysis_data %>%
+  left_join(
+    invasive_richness_Transect_ID %>%
+      rename(invasive_richness = invasive_richness_Transect_ID),
+    by = "Transect_ID"
+  ) %>%
+  mutate(
+    invasive_richness = replace_na(invasive_richness, 0)
+  ) %>%
+  relocate(invasive_richness, .after = MPA_Identi)
+
+# remove duplicate transects
+analysis_data <- analysis_data %>%
+  distinct(Transect_ID, .keep_all = TRUE)
+
+# add enriched
+
+enriched_metadata <- enriched_metadata %>%
+  dplyr::select(-MPA_Identi, -decimalLatitude, -decimalLongitude)
+
+analysis_data <- analysis_data %>%
+  left_join(
+    enriched_metadata,
+    by = "Transect_ID"
+  )
+
 ### circulation data
 
 cur_lon_grid <- ncvar_get(nc_circ, "longitude")
@@ -263,8 +321,13 @@ u_stack <- drop(ncvar_get(nc_circ, "uo"))
 v_stack <- drop(ncvar_get(nc_circ, "vo"))
 nc_close(nc_circ)
 
-# scalar speed only (isotropic cost)
+# uses scalar speed only (isotropic cost)
 speed <- sqrt(u_stack^2 + v_stack^2)
+
+# # sin / cos direction
+# theta   <- atan2(v_stack, u_stack)
+# dir_cos <- cos(theta)
+# dir_sin <- sin(theta)
 
 # cost distance from suez canal
 suez_coord <- data.frame(lon = 32.32, lat = 31.27)
@@ -288,15 +351,13 @@ site_pts <- SpatialPoints(analysis_data[, c("decimalLongitude", "decimalLatitude
 
 analysis_data$circulation_cost_dist_suez <- as.numeric(costDistance(tr, suez_pt, site_pts))
 
+#####
+
 ### variable reduction
 
 ## remove additional variables 
 
 variables_to_remove <- c(
-  "min_bathy",
-  "max_bathy", 
-  "max_SST_23_24",
-  "min_SST_23_24",
   "Oil spills",                                   
   "Risk of hypoxia",  
   "Invasive species",
@@ -307,13 +368,9 @@ variables_to_remove <- c(
   "Organic pollution pesticides",                 
   "UV radiation", 
   "Nutrient input fertilizers",
-  "Gravity",
-  "mean_bathy",
-  "Fishing_Pressure_AIS_23_24",
-  "mean_PP_23_24",
-  "total_habitat_area_m2",
   "Ocean acidification",
-  "Commercial Shipping"
+  "Commercial Shipping",
+  "Gravity"
 )
 
 analysis_data <- analysis_data[, !(names(analysis_data) %in% variables_to_remove), drop = FALSE]
@@ -338,22 +395,17 @@ analysis_data <- analysis_data[, !names(analysis_data) %in% c(
   "Artisanal fishing"
 )]
 
-### scale predictors
-
 analysis_scaled <- analysis_data %>%
   mutate(
     across(
-      7:ncol(.),
+      6:ncol(.),
       ~ if(is.numeric(.)) as.numeric(scale(.)) else .
     )
   )
 
-predictors <- names(analysis_scaled)[7:ncol(analysis_scaled)]
+predictors <- names(analysis_scaled)[6:ncol(analysis_scaled)]
 predictors <- predictors[sapply(analysis_scaled[predictors], is.numeric)]
 
-#####
-
-### univariate GLMM
 ### GLMM loop
 
 uni_glmm_results <- map_dfr(predictors, function(var){
@@ -367,7 +419,7 @@ uni_glmm_results <- map_dfr(predictors, function(var){
     family = poisson,
     data =  analysis_scaled
   )
-
+  
   broom.mixed::tidy(model, effects = "fixed") %>%
     filter(component == "cond", term != "(Intercept)") %>%
     mutate(
@@ -380,8 +432,6 @@ uni_glmm_results <- map_dfr(predictors, function(var){
 # rank
 uni_glmm_results <- uni_glmm_results %>%
   arrange(p.value)
-
-### coefficent plot
 
 # significance labels
 uni_glmm_results <- uni_glmm_results %>%
@@ -404,15 +454,13 @@ uni_glmm_results <- uni_glmm_results %>%
 # rename predictors
 uni_glmm_results <- uni_glmm_results %>%
   mutate(predictor = case_when(
-    predictor == "mean_SST_23_24" ~ "Mean Sea Surface Temperature (SST)",
-    predictor == "mean_SSS_23_24" ~ "Mean Sea Surface Salinity (SSS)",
+    predictor == "sst" ~ "Mean Sea Surface Temperature (SST)",
+    predictor == "sss" ~ "Mean Sea Surface Salinity (SSS)", 
     predictor == "Fishing_Mean" ~ "Fishing Gravity",
     predictor == "grav" ~ "Human Gravity",
     predictor == "circulation_cost_dist_suez" ~ "Circulation Cost-Distance to Red Sea",
     TRUE ~ predictor
   ))
-
-## reorder variables for comparison with azzurro
 
 uni_glmm_results <- uni_glmm_results %>%
   mutate(predictor = factor(predictor, levels = c("Circulation Cost-Distance to Red Sea",
@@ -420,7 +468,7 @@ uni_glmm_results <- uni_glmm_results %>%
                                                   "Human Gravity",
                                                   "Mean Sea Surface Salinity (SSS)",
                                                   "Mean Sea Surface Temperature (SST)"
-                                                  ))) %>%
+  ))) %>%
   arrange(predictor)
 
 # plot
