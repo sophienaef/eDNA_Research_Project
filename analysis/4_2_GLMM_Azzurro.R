@@ -522,4 +522,16 @@ ggsave(
   dpi = 1200
 )
 
-write.csv(uni_glmm_results_azzurro , "4_GLMM/4_2_azzurro_glmm_results_table.csv", row.names = FALSE)
+# write csv
+
+uni_glmm_results_azzurro <- uni_glmm_results_azzurro %>%
+  arrange(factor(predictor, levels = c(
+    "Mean Sea Surface Temperature (SST)",
+    "Mean Sea Surface Salinity (SSS)",
+    "Human Gravity",
+    "Fishing Gravity",
+    "Circulation Cost-Distance to Red Sea"
+  )))
+
+write.csv(uni_glmm_results_azzurro , "4_GLMM/4_2_azzurro_glmm_results_table.csv", row.names = FALSE,
+          quote = FALSE)
